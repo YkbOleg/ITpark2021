@@ -11,7 +11,7 @@ public class FibonacciSequence {
     }
 
     /**
-     * Ввад данных
+     * Ввод данных
      * @return Возврат введённого значения
      */
     public static int input() {
