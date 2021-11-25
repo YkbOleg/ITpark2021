@@ -3,14 +3,14 @@ package lesson7;
 public class Dog {
 
     String name;
-    double run = 500;
-    double swim = 10;
+    final double run = 500;
+    final double swim = 10;
 
     public Dog(String name){
         this.name = name;
     }
 
-    public void race(double Distance) {
+    public void run(double Distance) {
         if (this.run >= Distance){
             System.out.println(" пробежал " + Distance + " метров");
         }

@@ -28,17 +28,17 @@ public class Competition {
         }
 
         System.out.print(dogOne.name);
-        dogOne.race(distanceRun);
+        dogOne.run(distanceRun);
         System.out.print(dogOne.name);
         dogOne.swimming(distanceSwim);
 
         System.out.print(tigerOne.name);
-        tigerOne.race(distanceRun);
+        tigerOne.run(distanceRun);
         System.out.print(tigerOne.name);
         tigerOne.swimming(distanceSwim);
 
         System.out.print(catOne.name);
-        catOne.race(distanceRun);
+        catOne.run(distanceRun);
         System.out.print(catOne.name);
         catOne.swimming(distanceSwim);
     }

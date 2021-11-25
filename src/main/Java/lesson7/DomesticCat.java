@@ -3,14 +3,14 @@ package lesson7;
 public class DomesticCat {
 
     String name;
-    double run = 200;
-    double swim = -1;
+    final double run = 200;
+    String swim = "Так получилось, что кот не умеет плавать)";
 
     public DomesticCat(String name){
         this.name = name;
     }
 
-    public void race(double Distance) {
+    public void run(double Distance) {
         if (this.run >= Distance){
             System.out.println(" пробежал " + Distance + " метров");
         }
@@ -20,6 +20,6 @@ public class DomesticCat {
     }
 
     public void swimming(double Distance) {
-        System.out.println(" не умеет плавать");
+            System.out.println(" " + Distance + " метров не проплыл." + swim);
     }
 }
