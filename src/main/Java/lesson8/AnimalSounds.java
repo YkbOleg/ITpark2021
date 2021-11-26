@@ -8,11 +8,14 @@ public class AnimalSounds {
         Cat catOne = new Cat("Barsik");
         Dog dogOne = new Dog("Bobik");
 
-        System.out.print(cowOne.name + " ");
-        cowOne.voice();
-        System.out.print(catOne.name + " ");
-        catOne.voice();
-        System.out.print(dogOne.name + " ");
-        dogOne.voice();
+        Animal[] animals = new Animal[3];
+        animals[0] = cowOne;
+        animals[1] = catOne;
+        animals[2] = dogOne;
+
+        for (Animal array: animals){
+            System.out.print(array.name + " ");
+            array.voice();
+        }
     }
 }
