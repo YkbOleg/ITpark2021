@@ -1,4 +1,4 @@
-package lesson8;
+package lesson8.matrix;
 
 import java.util.Objects;
 import java.util.Scanner;

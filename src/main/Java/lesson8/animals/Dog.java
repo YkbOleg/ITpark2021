@@ -1,4 +1,4 @@
-package lesson8;
+package lesson8.animals;
 
 public class Dog extends Animal{
 
