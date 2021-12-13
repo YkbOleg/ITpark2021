@@ -7,7 +7,7 @@ public class ArrayRunner {
 
     public static void main(String[] args) throws MyArraySizeException {
         int error = 0;  //оценка работы программы 0:без ошибок, -1: с ошибками
-        int a = (int)(4 + Math.random() * 3);
+        int a = (int)(4 + Math.random() * 2);
         System.out.println(a);
         String[][] myArray = new String[a][4];
 

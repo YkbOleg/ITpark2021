@@ -36,15 +36,16 @@ public class WorkArray {
      */
     public int sumArray(String[][] array) throws MyArrayDataException {
         int sum = 0;
+        int i = 0, j = 0;
         try {
-            for (String[] strings : array) {
-                for (int j = 0; j < array[0].length; j++) {
-                    sum += (Integer.parseInt(strings[j]));
+            for (i = 0; i < array.length; i++) {
+                for (j = 0; j < array[0].length; j++) {
+                    sum += (Integer.parseInt(array[i][j]));
                 }
             }
         }
         catch (Exception e){
-        throw new MyArrayDataException("В ячейке массива лежит что-то не то");
+        throw new MyArrayDataException("В ячейке массива " + i + ":" + j + " лежит что-то не то (" + e + " )");
         }
         return sum;
     }
