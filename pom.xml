@@ -18,6 +18,8 @@
         <metadata-extractor.version>2.16.0</metadata-extractor.version>
         <jaxb.version>3.0.0</jaxb.version>
         <jackson-databind.version>2.12.5</jackson-databind.version>
+        <mysql-connector-java.version>8.0.28</mysql-connector-java.version>
+        <opencsv.version>5.5.2</opencsv.version>
     </properties>
 
     <dependencies>
@@ -59,6 +61,20 @@
             <artifactId>jackson-databind</artifactId>
             <version>${jackson-databind.version}</version>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>${mysql-connector-java.version}</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/com.opencsv/opencsv -->
+        <dependency>
+            <groupId>com.opencsv</groupId>
+            <artifactId>opencsv</artifactId>
+            <version>${opencsv.version}</version>
+        </dependency>
+
+
     </dependencies>
 
     <build>
