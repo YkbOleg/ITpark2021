@@ -16,7 +16,7 @@ import java.util.stream.Collectors;
 @Service
 public class JsonReaderimpl implements ExchangeRateable {
 
-    final String url = "https://www.cbr-xml-daily.ru/daily_json.js";
+    private final String url = "https://www.cbr-xml-daily.ru/daily_json.js";
 
     //-------------------Чтение объекта--------------------------------------------------------------
     private String readAll(Reader rd) throws IOException {
@@ -29,7 +29,8 @@ public class JsonReaderimpl implements ExchangeRateable {
     }
 
     //-----------------Получение JSONObject из JSON полученного по URL--------------------------------
-    private JSONObject getJsonFromUrl() throws IOException, JSONException {
+    @SneakyThrows
+    public JSONObject getJsonFromUrl() throws JSONException {
         InputStream is = new URL(url).openStream();
         try {
             BufferedReader rd = new BufferedReader(new InputStreamReader(is, Charset.forName("UTF-8")));
@@ -44,7 +45,7 @@ public class JsonReaderimpl implements ExchangeRateable {
     //-------------------Получение списка валют из JSONObject----------------------------------------
     @Override
     @SneakyThrows
-    public List<String> jsonMappingValute() {
+    public List<String> jsonMappingValutes() {
         JSONObject jsonValutes = (JSONObject) getJsonFromUrl().get("Valute");
         List<String> valutes = Arrays.stream(JSONObject.getNames(jsonValutes))
                 .map(v -> v + " - " + jsonValutes.getJSONObject(v).getString("Name")).collect(Collectors.toList());
@@ -54,9 +55,9 @@ public class JsonReaderimpl implements ExchangeRateable {
     //-----------------Получение курса валюты из JSONObject
     @Override
     @SneakyThrows
-    public Double jsonMappingValutes(String valute) {
-        Double jsonCurse = getJsonFromUrl().getJSONObject("Valute").getJSONObject(valute).getDouble("Value");
-        return jsonCurse;
+    public Double jsonMappingValute(String valute) {
+        JSONObject jsonObject = getJsonFromUrl();
+        return jsonObject.getJSONObject("Valute").getJSONObject(valute).getDouble("Value");
     }
 
 
@@ -66,7 +67,7 @@ public class JsonReaderimpl implements ExchangeRateable {
      */
     @Override
     public String input() {
-        Scanner in = new Scanner(System.in);
-        return in.next();
+        Scanner scannerIn = new Scanner(System.in);
+        return scannerIn.next();
     }
 }
